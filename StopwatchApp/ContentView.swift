@@ -9,13 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            
+            // First layer (backkground)
+            Color.black
+                .ignoresSafeArea()
+            
+            // Second Layer (rest of interface)
+            VStack {
+                Text("00:09.96")
+                    .font(Font.system(size: 90, weight: .thin))
+                    .foregroundStyle(.white)
+                
+                // Create a circular button
+                CircleButtonView()
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
